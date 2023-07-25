@@ -7,12 +7,28 @@ const Routes = [
 
 const NavBar = () => {
   return (
-    <div>
-      {Routes.map((route) => (
-        <Link href={route.route} key={route.route}>
-          {route.label}
-        </Link>
-      ))}
+    <div className="navbar bg-base-100">
+      <div className="flex-1">
+        <a className="btn btn-ghost normal-case text-xl">Stock</a>
+      </div>
+      <div className="flex-none">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <details>
+              <summary>Rutas</summary>
+              <ul className="p-2 bg-base-100">
+                {Routes.map((route) => (
+                  <li>
+                    <Link href={route.route} key={route.route}>
+                      {route.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
