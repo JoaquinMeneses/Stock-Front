@@ -1,18 +1,16 @@
 import Link from "next/link";
-
-const Routes = [
-  { route: "/", label: "Inicio" },
-  { route: "/catalogo", label: "Catalogo" },
-];
+import Menu from "./Menu";
 
 const NavBar = () => {
   return (
-    <div>
-      {Routes.map((route) => (
-        <Link href={route.route} key={route.route}>
-          {route.label}
-        </Link>
-      ))}
+    <div className="navbar bg-base-100 flex justify-between">
+      <Link href="/" className="btn btn-ghost normal-case text-xl">
+        <img src="icon.png" alt="" />
+      </Link>
+      <Link href="/tiendas" className="btn btn-ghost normal-case text-xl">
+        Tiendas
+      </Link>
+      <Menu />
     </div>
   );
 };
