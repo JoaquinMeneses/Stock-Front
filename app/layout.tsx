@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import useStore from "@/store/store";
 
 import type { Metadata } from "next";
+import React, { ReactNode } from "react"; // Importamos ReactNode
+
 export const metadata: Metadata = {
   title: "Stock",
   description: "Gestion de stock",
@@ -14,11 +16,11 @@ export const metadata: Metadata = {
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   const { theme } = useStore();
 
   return (
