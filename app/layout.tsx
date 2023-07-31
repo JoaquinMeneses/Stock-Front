@@ -4,11 +4,7 @@ import { Inter } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-import useStore from "@/store/store";
-
 import type { Metadata } from "next";
-import React, { ReactNode } from "react"; // Importamos ReactNode
-
 export const metadata: Metadata = {
   title: "Stock",
   description: "Gestion de stock",
@@ -16,16 +12,14 @@ export const metadata: Metadata = {
 
 const inter = Inter({ subsets: ["latin"] });
 
-interface RootLayoutProps {
-  children: ReactNode;
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
-  const { theme } = useStore();
-
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
-      <html lang="es" className="h-screen" data-theme={theme}>
+      <html lang="es" className="h-screen">
         <body className="flex flex-col h-full">
           <NavBar />
           <main className="flex-grow">{children}</main>

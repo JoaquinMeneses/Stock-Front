@@ -21,8 +21,6 @@ module.exports = {
           error: "#dc2626",
         },
       },
-      "light",
-      "dark",
     ],
   },
   plugins: [require("daisyui")],
