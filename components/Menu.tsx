@@ -1,8 +1,5 @@
-"use client"
 import Profile from "./Profile";
 import Auth from "./Auth";
-
-import useStore from "@/store/store";
 
 const user = true;
 
@@ -28,12 +25,8 @@ const Menu = () => {
     );
   };
 
-  const { theme, setTheme } = useStore();
-  console.log(theme)
-
   return (
-    <>
-      <button onClick={setTheme}>Toggle theme</button>
+    <div>
       <div className="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +51,7 @@ const Menu = () => {
       ) : (
         <Auth />
       )}
-    </>
+    </div>
   );
 };
 
