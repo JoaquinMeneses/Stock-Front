@@ -1,12 +1,16 @@
 import Link from "next/link";
 import Menu from "./Menu";
 
-const NavBar = ({ toggleTheme }) => {
+import useStore from "../store/store";
+
+const NavBar = () => {
+  const { setTheme } = useStore();
+
   return (
     <div className="navbar bg-base-100 flex justify-between">
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      <Link href="/" className="btn btn-ghost normal-case text-xl">
-        <img src="icon.png" alt="" />
+      <button onClick={setTheme}>Toggle Theme</button>
+      <Link href="/" className="btn btn-ghost normal-case text-2xl">
+        Stock
       </Link>
       <Link href="/tiendas" className="btn btn-ghost normal-case text-xl">
         Tiendas

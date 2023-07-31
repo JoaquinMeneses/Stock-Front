@@ -1,11 +1,12 @@
-'use client'
+"use client"
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+
+import useStore from "../store/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,16 +20,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [modeTheme, setModeTheme] = useState("light");
 
-  const toggleTheme = () => {
-    setModeTheme(modeTheme === "light" ? "dark" : "light");
-  };
+  const { theme } = useStore();
 
   return (
-    <html lang="es" className="h-screen" data-theme={modeTheme}>
+    <html lang="es" className="h-screen" data-theme={theme}>
       <body className="flex flex-col h-full">
-        <NavBar toggleTheme={toggleTheme}/>
+        <NavBar />
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>
