@@ -1,4 +1,4 @@
-/* import { create } from "zustand";
+import { create } from "zustand";
 
 type Store = {
   theme: string;
@@ -12,4 +12,3 @@ const useStore = create<Store>()((set) => ({
 }));
 
 export default useStore;
- */

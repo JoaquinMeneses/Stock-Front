@@ -1,13 +1,13 @@
 import Profile from "./Profile";
 import Auth from "./Auth";
 
-/* import useStore from "@/store/store";
- */
+import useStore from "@/store/store";
+
 const user = true;
 
 const Menu = () => {
-/*   const { setTheme } = useStore();
- */
+  const { setTheme } = useStore();
+
   const Cart = () => {
     return (
       <div className="btn btn-ghost btn-circle">
@@ -33,7 +33,7 @@ const Menu = () => {
     <div>
       <div
         className="swap swap-rotate btn btn-ghost btn-circle"
-        /* onClick={setTheme} */
+        onClick={setTheme}
       >
         <input type="checkbox" />
         <svg
